@@ -3,19 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Ma to-do-list</title>
         <link rel="stylesheet" type="text/css" href="src/css/style.css" />
+        <!--=========== FAVICON ===============-->
+        <link
+            rel="shortcut icon"
+            href="src/assets/to-do-list-hand-drawn-doodle-icon-free-vector.jpg"
+            type="image/x-icon"
+        />
     </head>
     <body>
-        <h1>Ma to-Do-List</h1>
-        <div container>
+        <div class="section-container">
+            <h1>Ma To-Do-List</h1>
             <div class="champs">
                 <input
                     type="text"
-                    id="TaskInput"
+                    id="taskInput"
                     placeholder="Ajouter une tâche"
                 />
-                <button onclick="addTask">
+                <button onclick="addTask()">
                     <ion-icon name="add-circle-outline"></ion-icon>
                 </button>
             </div>

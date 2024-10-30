@@ -6,74 +6,146 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 228, 225, 0.9),
+        rgba(225, 240, 255, 0.9)
+    );
+    color: #4b4b4b;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+.section-container {
+    background: rgba(220, 210, 230, 0.9); /* Couleur légèrement plus foncée */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #4b4b4b;
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80%; /* Largeur initiale de la ligne */
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        #4b4b4b,
+        transparent
+    ); /* Dégradé estompé */
+    position: absolute;
+    bottom: -5px; /* Positionnement sous le titre */
+    left: 10%; /* Centrage de la ligne */
 }
 
 .champs {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-}
-
-h1 {
     margin-bottom: 20px;
 }
 
 input[type="text"] {
-    width: 300px;
-    padding: 10px;
+    width: 70%;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    height: 50px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+    color: #4b4b4b;
+    background-color: rgba(240, 240, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
 }
 
 button {
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-left: 5px;
+    font-size: 1.5em;
+    color: #a5b4fc;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 ul {
     width: 100%;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    background: #f1f1f1;
-    padding: 10px;
-    border-radius: 5px;
+    background: rgba(245, 230, 255, 0.9);
+    padding: 12px;
+    border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+ul li.remove-animation {
+    animation: fadeOut 0.5s ease forwards;
 }
 
 ion-icon {
-    font-size: 20px;
-    margin-right: 5px;
-    background: midnightblue;
-    color: #f1f1f1;
+    font-size: 1.2em;
     padding: 0.5rem;
     border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .delete {
-    background: crimson;
+    background: #ffadad;
+    color: #fff;
 }
 
 .modify {
-    background: yellow;
+    background: #ffd6a5;
     color: #333;
+}
+
+ion-icon:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 }
